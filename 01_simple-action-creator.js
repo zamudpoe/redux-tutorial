@@ -1,47 +1,63 @@
 // Tutorial 1 - simple-action-creator.js
 
-// We started to talk a little about actions in the introduction but what exactly are those "action creators"
-// and how are they linked to "actions"?
+/*
+  CREADOR DE ACCIONES
+*/
+
+// Comenzaremos en la introduccion hablando un poco acerca de las acciones, pero que son
+// exactamente esos "CREADORES DE ACCIONES" y como ellos son enlazados a las ACCIONES!.
 
 // It's actually so simple that a few lines of code can explain it all!
 
-// The action creator is just a function...
+// Los CREADORES DE ACCIONES son solo funciones....
 var actionCreator = function() {
-    // ...that creates an action (yeah, the name action creator is pretty obvious now) and returns it
+    // ... que crean una accion(Yeah, El nombre CREADOR DE ACCIONES es demasiado obvio ahora) y la retornan!.
+    console.log('\n\n%cLos %cCREADORES DE ACCIONES %cson solo %cfunciones%c...que %ccrean una accion%c (yeah!, el nombre %cCREADOR DE ACCION%c es demasiado obvio ahora) y la retornan!. \n\n',
+    'color: silver;', 'color: tomato; font-weight: bold;', 'color: silver;',
+    'color: teal; font-weight: bold;', 'color: silver;', 'color: teal; font-weight: bold;', 'color:silver;',
+    'color: teal; font-weight:bold;', 'color: silver;');
+
     return {
-        type: 'AN_ACTION'
+        type: 'UNA_ACCION'
     }
 }
 
-// So is that all? yes.
+// Asi que esto es todo? , ¡¡¡ SI !!!
 
-// However, one thing to note is the format of the action. This is kind of a convention in flux
-// that the action is an object that contains a "type" property. This type allows for further
-// handling of the action. Of course, the action can also contain other properties to
-// pass any data you want.
+// Como sea , una cosa a notar es el formato de la accion.
+// Esto es una especie de convención en FLUX que la acción es un objeto que
+// contiene una propiedad "type". Este tipo permite un manejo adicional de la
+// acción. Por supuesto , La acción también puede contener otras propiedades
+// para pasar los datos que desee.
 
-// We'll also see later that the action creator can actually return something other than an action,
-// like a function. This will be extremely useful for async action handling (more on that
-// in dispatch-async-action.js).
+// También veremos más adelante que los CREADORES DE ACCIONES  pueden realmente devolver algo que
+// no sea una acción, igual que una funcion. Esto sera extremadamente de mucha utilidad para
+// manejo de acciones asyncronas ( mas de esto en: dispatch-async-action.js )
 
-// We can call this action creator and get an action as expected:
-console.log(actionCreator())
-// Output: { type: 'AN_ACTION' }
+// Podemos llamar a esta CREADOR de ACCION y obtener una ACCION como se esperaba:
+console.log(actionCreator());
 
-// Ok, this works but it does not go anywhere...
-// What we need is to have this action be sent somewhere so that
-// anyone interested could know that something happened and could act accordingly.
-// We call this process "Dispatching an action".
+    // SALIDA: { type: 'UNA_ACCION' }
+    //         Object {type: "UNA_ACCION"}
 
-// To dispatch an action we need... a dispatch function ("Captain obvious").
-// And to let anyone interested know that an action happened, we need a mechanism to register
-// "handlers". Such "handlers" to actions in traditional flux application are called stores and
-// we'll see in the next section how they are called in Redux.
+// OK, Bueno, esto funciona, pero no va a ninguna parte ...
+// Lo que necesitamos es que esta acción sea enviada a alguna parte para que
 
-// So far here is the flow of our application:
-// ActionCreator -> Action
+// Lo que necesitamos es que esta acción se envíe a algún lugar para que cualquier
+// persona interesada pueda saber que algo sucedió y podría actuar en consecuencia a lo sucedido.
+// Llamamos a este proceso "Despachando una accion".
 
-// Read more about actions and action creators here:
-// http://rackt.org/redux/docs/recipes/ReducingBoilerplate.html
+// Para despachar una accion, necesitamos... una funcion despachadora("Capitan Obvio").
+// Y para que cualquier persona interesada sepa que una acción ocurrió, necesitamos
+// un mecanismo para registrar "MANEJADORES". Estos "MANEJADORES" de ACCIONES en
+// la aplicación de flujo tradicional se llaman tiendas 'STORES' y veremos en la siguiente
+// sección cómo se llaman en Redux.
 
-// Go to next tutorial: 02_about-state-and-meet-redux.js
+// Hasta ahora aquí está el flujo de nuestra aplicación:
+//    ActionCreator -> Action
+
+// Conoce mas acerta de ACCIONES y CREADORES DE ACCIONES aqui:
+//      http://rackt.org/redux/docs/recipes/ReducingBoilerplate.html
+
+// Dirigete al proximo tutorial :
+//      02_about-state-and-meet-redux.js
